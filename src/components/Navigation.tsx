@@ -1,16 +1,16 @@
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { useState } from 'react';
+import { Menu, X } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Services", href: "#services" },
-    { name: "Portfolio", href: "#portfolio" },
-    { name: "Contact", href: "#contact" },
+    { name: 'Home', href: '#home' },
+    { name: 'About', href: '#about' },
+    { name: 'Services', href: '#services' },
+    { name: 'Portfolio', href: '#portfolio' },
+    { name: 'Contact', href: '#contact' },
   ];
 
   const scrollToSection = (href: string) => {
@@ -25,11 +25,12 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <button 
+            <button
               onClick={() => scrollToSection('#home')}
-              className="text-2xl font-bold text-white hover:text-[#F39C12] transition-colors"
+              className="text-2xl font-bold text-white hover:text-[#F39C12] transition-colors flex items-center gap-1"
             >
-              BuildPro
+              <img src="/logo-large.png" alt="logo" className="size-16" />
+              SH.REMONTPRO
             </button>
           </div>
 
@@ -44,12 +45,6 @@ export default function Navigation() {
                 {item.name}
               </button>
             ))}
-            <Button 
-              onClick={() => scrollToSection('#contact')}
-              className="bg-[#F39C12] hover:bg-[#E67E22] text-white"
-            >
-              Get Quote
-            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -74,7 +69,7 @@ export default function Navigation() {
               </button>
             ))}
             <div className="px-4 pt-2">
-              <Button 
+              <Button
                 onClick={() => scrollToSection('#contact')}
                 className="w-full bg-[#F39C12] hover:bg-[#E67E22] text-white"
               >

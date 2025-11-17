@@ -1,11 +1,11 @@
-import Navigation from "./Navigation";
-import Hero from "./Hero";
-import About from "./About";
-import Services from "./Services";
-import Portfolio from "./Portfolio";
-import Contact from "./Contact";
-import Footer from "./Footer";
-import { Toaster } from "./ui/toaster";
+import Navigation from './Navigation';
+import Hero from './Hero';
+import About from './About';
+import Services from './Services';
+import Portfolio from './Portfolio';
+import Contact from './Contact';
+import Footer from './Footer';
+import { Toaster } from './ui/toaster';
 
 function Home() {
   return (
