@@ -25,13 +25,13 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <button
-              onClick={() => scrollToSection('#home')}
+            <a
+              href="/"
               className="text-2xl font-bold text-white hover:text-[#F39C12] transition-colors flex items-center gap-1"
             >
               <img src="/logo-large.png" alt="logo" className="size-16" />
               SH.REMONTPRO
-            </button>
+            </a>
           </div>
 
           {/* Desktop Navigation */}

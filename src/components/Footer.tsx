@@ -1,13 +1,13 @@
-import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
+    { icon: Facebook, href: '#', label: 'Facebook' },
+    { icon: Twitter, href: '#', label: 'Twitter' },
+    { icon: Instagram, href: '#', label: 'Instagram' },
+    { icon: Linkedin, href: '#', label: 'LinkedIn' },
   ];
 
   return (
@@ -16,10 +16,18 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Company Info */}
           <div>
-            <h3 className="text-2xl font-bold mb-4 text-[#F39C12]">BuildPro</h3>
+            <h3 className="font-bold mb-4 text-[#F39C12]">
+              <a
+                href="/"
+                className="text-xl font-bold text-[#F39C12] hover:text-[#F39C12] transition-colors flex items-center gap-1"
+              >
+                <img src="/logo-large.png" alt="logo" className="size-12" />
+                SH.REMONTPRO
+              </a>
+            </h3>
             <p className="text-gray-300 leading-relaxed">
-              Your trusted partner in construction. Building dreams with quality, 
-              integrity, and excellence since 2008.
+              Your trusted partner in construction. Building dreams with
+              quality, integrity, and excellence since 2008.
             </p>
           </div>
 
@@ -27,16 +35,18 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              {["Home", "About", "Services", "Portfolio", "Contact"].map((item) => (
-                <li key={item}>
-                  <a
-                    href={`#${item.toLowerCase()}`}
-                    className="text-gray-300 hover:text-[#F39C12] transition-colors"
-                  >
-                    {item}
-                  </a>
-                </li>
-              ))}
+              {['Home', 'About', 'Services', 'Portfolio', 'Contact'].map(
+                (item) => (
+                  <li key={item}>
+                    <a
+                      href={`#${item.toLowerCase()}`}
+                      className="text-gray-300 hover:text-[#F39C12] transition-colors"
+                    >
+                      {item}
+                    </a>
+                  </li>
+                )
+              )}
             </ul>
           </div>
 
@@ -64,7 +74,7 @@ export default function Footer() {
         {/* Copyright */}
         <div className="border-t border-gray-600 pt-8 text-center">
           <p className="text-gray-400">
-            © {currentYear} BuildPro Construction Services. All rights reserved.
+            © {currentYear} SH.REMONTPRO Services. All rights reserved.
           </p>
         </div>
       </div>
