@@ -56,7 +56,7 @@ export default function Navigation() {
                 {item.name}
               </button>
             ))}
-            
+
             {/* Language Switcher */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
@@ -101,14 +101,18 @@ export default function Navigation() {
                 {item.name}
               </button>
             ))}
-            
+
             {/* Mobile Language Switcher */}
             <div className="px-4 pt-2 flex gap-2">
               <Button
                 variant="outline"
                 size="sm"
                 onClick={() => changeLanguage('en')}
-                className={`flex-1 ${i18n.language === 'en' ? 'bg-[#F39C12] text-white' : 'text-white border-white'}`}
+                className={`flex-1 ${
+                  i18n.language === 'en'
+                    ? 'bg-[#F39C12] text-white'
+                    : 'text-black border-white'
+                }`}
               >
                 EN
               </Button>
@@ -116,7 +120,11 @@ export default function Navigation() {
                 variant="outline"
                 size="sm"
                 onClick={() => changeLanguage('pl')}
-                className={`flex-1 ${i18n.language === 'pl' ? 'bg-[#F39C12] text-white' : 'text-white border-white'}`}
+                className={`flex-1 ${
+                  i18n.language === 'pl'
+                    ? 'bg-[#F39C12] text-white'
+                    : 'text-black border-white'
+                }`}
               >
                 PL
               </Button>

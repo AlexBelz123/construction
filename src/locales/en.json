@@ -10,6 +10,16 @@
     "subtitle": "Professional construction services for residential, commercial, and industrial projects",
     "cta": "Get Started"
   },
+  "aboutUs": {
+    "title": "About Us",
+    "p1": "SH.Remontpro is a company that has specialized in comprehensive renovations and interior finishing for many years. Our mission is to create modern, comfortable, and aesthetic spaces tailored to the needs of each customer.",
+    "p2": "We work with the utmost care—we pay attention to detail, meet deadlines, and maintain clear communication at every stage of the project. We believe that reliability and honesty are the foundation of successful cooperation.",
+    "stats": {
+      "completed": "Projects Completed",
+      "experience": "Years Experience",
+      "satisfaction": "Client Satisfaction"
+    }
+  },
   "services": {
     "title": "Our Services",
     "subtitle": "We offer a comprehensive range of construction services to meet all your residential and commercial needs",

@@ -10,6 +10,16 @@
     "subtitle": "Profesjonalne usługi budowlane dla projektów mieszkaniowych, komercyjnych i przemysłowych",
     "cta": "Rozpocznij"
   },
+  "aboutUs": {
+    "title": "O Nas",
+    "p1": "SH.Remontpro to firma, która od lat specjalizuje się w kompleksowych remontach i wykończeniach wnętrz. Naszą misją jest tworzenie nowoczesnych, wygodnych i estetycznych przestrzeni dopasowanych do potrzeb każdego klienta.",
+    "p2": "Pracujemy z najwyższą starannością — dbamy o detale, dotrzymujemy terminów i utrzymujemy jasną komunikację na każdym etapie realizacji. Wierzymy, że rzetelność i uczciwość to podstawa udanej współpracy.",
+    "stats": {
+      "completed": "Zrealizowane Projekty",
+      "experience": "Lata Doświadczenia",
+      "satisfaction": "Zadowolenie Klientów"
+    }
+  },
   "services": {
     "title": "Nasze Usługi",
     "subtitle": "Oferujemy kompleksowy zakres usług budowlanych, aby spełnić wszystkie Twoje potrzeby mieszkaniowe i komercyjne",
