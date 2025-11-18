@@ -1,6 +1,8 @@
 import { Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 export default function Footer() {
+  const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
@@ -26,8 +28,7 @@ export default function Footer() {
               </a>
             </h3>
             <p className="text-gray-300 leading-relaxed">
-              Your trusted partner in construction. Building dreams with
-              quality, integrity, and excellence since 2008.
+              {t('footer.tagline')}
             </p>
           </div>
 
@@ -35,18 +36,21 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              {['Home', 'About', 'Services', 'Portfolio', 'Contact'].map(
-                (item) => (
-                  <li key={item}>
-                    <a
-                      href={`#${item.toLowerCase()}`}
-                      className="text-gray-300 hover:text-[#F39C12] transition-colors"
-                    >
-                      {item}
-                    </a>
-                  </li>
-                )
-              )}
+              {[
+                { name: t('nav.home'), href: 'home' },
+                { name: t('nav.services'), href: 'services' },
+                { name: t('nav.portfolio'), href: 'portfolio' },
+                { name: t('nav.contact'), href: 'contact' },
+              ].map((item) => (
+                <li key={item.href}>
+                  <a
+                    href={`#${item.href}`}
+                    className="text-gray-300 hover:text-[#F39C12] transition-colors"
+                  >
+                    {item.name}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -74,7 +78,7 @@ export default function Footer() {
         {/* Copyright */}
         <div className="border-t border-gray-600 pt-8 text-center">
           <p className="text-gray-400">
-            © {currentYear} SH.REMONTPRO Services. All rights reserved.
+            © {currentYear} SH.REMONTPRO Services. {t('footer.rights')}
           </p>
         </div>
       </div>

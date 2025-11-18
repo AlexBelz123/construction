@@ -1,22 +1,33 @@
 import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useTranslation } from 'react-i18next';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
+  const { t, i18n } = useTranslation();
 
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Services', href: '#services' },
-    { name: 'Portfolio', href: '#portfolio' },
-    { name: 'Contact', href: '#contact' },
+    { name: t('nav.home'), href: '#home' },
+    { name: t('nav.services'), href: '#services' },
+    { name: t('nav.portfolio'), href: '#portfolio' },
+    { name: t('nav.contact'), href: '#contact' },
   ];
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
     element?.scrollIntoView({ behavior: 'smooth' });
     setIsOpen(false);
+  };
+
+  const changeLanguage = (lng: string) => {
+    i18n.changeLanguage(lng);
   };
 
   return (
@@ -45,6 +56,28 @@ export default function Navigation() {
                 {item.name}
               </button>
             ))}
+            
+            {/* Language Switcher */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="text-white hover:text-[#F39C12] hover:bg-transparent"
+                >
+                  <Globe className="w-5 h-5 mr-2" />
+                  {i18n.language.toUpperCase()}
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                <DropdownMenuItem onClick={() => changeLanguage('en')}>
+                  English (EN)
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => changeLanguage('pl')}>
+                  Polski (PL)
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
 
           {/* Mobile Menu Button */}
@@ -68,12 +101,24 @@ export default function Navigation() {
                 {item.name}
               </button>
             ))}
-            <div className="px-4 pt-2">
+            
+            {/* Mobile Language Switcher */}
+            <div className="px-4 pt-2 flex gap-2">
               <Button
-                onClick={() => scrollToSection('#contact')}
-                className="w-full bg-[#F39C12] hover:bg-[#E67E22] text-white"
+                variant="outline"
+                size="sm"
+                onClick={() => changeLanguage('en')}
+                className={`flex-1 ${i18n.language === 'en' ? 'bg-[#F39C12] text-white' : 'text-white border-white'}`}
               >
-                Get Quote
+                EN
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => changeLanguage('pl')}
+                className={`flex-1 ${i18n.language === 'pl' ? 'bg-[#F39C12] text-white' : 'text-white border-white'}`}
+              >
+                PL
               </Button>
             </div>
           </div>

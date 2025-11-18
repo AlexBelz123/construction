@@ -1,42 +1,45 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export default function Portfolio() {
+  const { t } = useTranslation();
+  
   const portfolioCategories = [
     {
       slug: "residential",
-      title: "Residential",
-      description: "Custom homes, renovations, and remodeling projects",
+      title: t('portfolio.residential.title'),
+      description: t('portfolio.residential.description'),
       image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
     },
     {
       slug: "commercial",
-      title: "Commercial",
-      description: "Office spaces, retail stores, and business facilities",
+      title: t('portfolio.commercial.title'),
+      description: t('portfolio.commercial.description'),
       image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
     },
     {
       slug: "industrial",
-      title: "Industrial",
-      description: "Warehouses, factories, and industrial complexes",
+      title: t('portfolio.industrial.title'),
+      description: t('portfolio.industrial.description'),
       image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&q=80",
     },
     {
       slug: "renovation",
-      title: "Renovation",
-      description: "Complete makeovers and restoration projects",
+      title: t('portfolio.renovation.title'),
+      description: t('portfolio.renovation.description'),
       image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80",
     },
     {
       slug: "landscaping",
-      title: "Landscaping",
-      description: "Outdoor spaces, gardens, and hardscaping",
+      title: t('portfolio.landscaping.title'),
+      description: t('portfolio.landscaping.description'),
       image: "https://images.unsplash.com/photo-1558904541-efa843a96f01?w=800&q=80",
     },
     {
       slug: "infrastructure",
-      title: "Infrastructure",
-      description: "Roads, bridges, and public works projects",
+      title: t('portfolio.infrastructure.title'),
+      description: t('portfolio.infrastructure.description'),
       image: "https://images.unsplash.com/photo-1590856029826-c7a73142bbf1?w=800&q=80",
     },
   ];
@@ -45,12 +48,12 @@ export default function Portfolio() {
     <section id="portfolio" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl md:text-5xl font-bold text-[#2C3E50] text-center mb-6">
-          Our Portfolio
+          {t('portfolio.title')}
         </h2>
         <div className="w-24 h-1 bg-[#F39C12] mx-auto mb-12" />
         
         <p className="text-lg text-gray-600 text-center max-w-2xl mx-auto mb-16">
-          Take a look at some of our recently completed projects showcasing our commitment to quality and excellence
+          {t('portfolio.subtitle')}
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -75,7 +78,7 @@ export default function Portfolio() {
                   to={`/${category.slug}`}
                   className="inline-flex items-center gap-2 text-[#F39C12] font-semibold hover:gap-3 transition-all duration-300"
                 >
-                  View Gallery
+                  {t('portfolio.viewGallery')}
                   <ArrowRight size={18} />
                 </Link>
               </div>

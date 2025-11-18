@@ -1,62 +1,52 @@
-import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft } from 'lucide-react';
-import { useState } from 'react';
-import Navigation from './Navigation';
-import Footer from './Footer';
+import { useParams, Link } from "react-router-dom";
+import { ArrowLeft } from "lucide-react";
+import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import Navigation from "./Navigation";
+import Footer from "./Footer";
 
 export default function GalleryPage() {
   const { assetType } = useParams<{ assetType: string }>();
+  const { t } = useTranslation();
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  const [mousePosition, setMousePosition] = useState({ x: 50, y: 50 });
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
-  const galleryData: Record<
-    string,
-    { title: string; description: string; images: string[] }
-  > = {
+  const galleryData: Record<string, { title: string; description: string; images: string[] }> = {
     residential: {
-      title: 'Residential Projects',
-      description:
-        'Custom homes, renovations, and remodeling projects that transform living spaces',
-      images: Array.from({ length: 8 }, (_, i) => `/residential/${i + 1}.jpeg`),
+      title: t('gallery.residential.title'),
+      description: t('gallery.residential.description'),
+      images: Array(12).fill("/placeholder-image.jpg"),
     },
     commercial: {
-      title: 'Commercial Projects',
-      description:
-        'Office spaces, retail stores, and business facilities built for success',
-      images: Array.from({ length: 6 }, (_, i) => `/commercial/${i + 1}.jpeg`),
+      title: t('gallery.commercial.title'),
+      description: t('gallery.commercial.description'),
+      images: Array(12).fill("/placeholder-image.jpg"),
     },
     industrial: {
-      title: 'Industrial Projects',
-      description:
-        'Warehouses, factories, and industrial complexes engineered for efficiency',
-      images: Array.from({ length: 4 }, (_, i) => `/industrial/${i + 1}.jpeg`),
+      title: t('gallery.industrial.title'),
+      description: t('gallery.industrial.description'),
+      images: Array(12).fill("/placeholder-image.jpg"),
     },
     renovation: {
-      title: 'Renovation Projects',
-      description:
-        'Complete makeovers and restoration projects breathing new life into spaces',
-      images: Array(12).fill('/placeholder-image.jpg'),
+      title: t('gallery.renovation.title'),
+      description: t('gallery.renovation.description'),
+      images: Array(12).fill("/placeholder-image.jpg"),
     },
     landscaping: {
-      title: 'Landscaping Projects',
-      description:
-        'Outdoor spaces, gardens, and hardscaping that enhance property value',
-      images: Array(12).fill('/placeholder-image.jpg'),
+      title: t('gallery.landscaping.title'),
+      description: t('gallery.landscaping.description'),
+      images: Array(12).fill("/placeholder-image.jpg"),
     },
     infrastructure: {
-      title: 'Infrastructure Projects',
-      description:
-        'Roads, bridges, and public works projects building community foundations',
-      images: Array(12).fill('/placeholder-image.jpg'),
+      title: t('gallery.infrastructure.title'),
+      description: t('gallery.infrastructure.description'),
+      images: Array(12).fill("/placeholder-image.jpg"),
     },
   };
 
   const currentGallery = assetType ? galleryData[assetType] : null;
 
-  const handleMouseMove = (
-    e: React.MouseEvent<HTMLDivElement>,
-    index: number
-  ) => {
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>, index: number) => {
     const rect = e.currentTarget.getBoundingClientRect();
     const x = ((e.clientX - rect.left) / rect.width) * 100;
     const y = ((e.clientY - rect.top) / rect.height) * 100;
@@ -66,21 +56,15 @@ export default function GalleryPage() {
 
   const handleMouseLeave = () => {
     setHoveredIndex(null);
-    setMousePosition({ x: 50, y: 50 });
   };
 
   if (!currentGallery) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-4xl font-bold text-[#2C3E50] mb-4">
-            Gallery Not Found
-          </h1>
-          <Link
-            to="/"
-            className="text-[#3498DB] hover:text-[#F39C12] transition-colors"
-          >
-            Return to Home
+          <h1 className="text-4xl font-bold text-[#2C3E50] mb-4">{t('gallery.notFound')}</h1>
+          <Link to="/" className="text-[#3498DB] hover:text-[#F39C12] transition-colors">
+            {t('gallery.returnHome')}
           </Link>
         </div>
       </div>
@@ -90,7 +74,7 @@ export default function GalleryPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Navigation />
-
+      
       <div className="pt-24 pb-20">
         <div className="container mx-auto px-4">
           <Link
@@ -98,7 +82,7 @@ export default function GalleryPage() {
             className="inline-flex items-center gap-2 text-[#3498DB] hover:text-[#F39C12] transition-colors mb-8 font-semibold"
           >
             <ArrowLeft size={20} />
-            Back to Portfolio
+            {t('gallery.backToPortfolio')}
           </Link>
 
           <h1 className="text-4xl md:text-5xl font-bold text-[#2C3E50] mb-4">
@@ -113,19 +97,16 @@ export default function GalleryPage() {
             {currentGallery.images.map((image, index) => (
               <div
                 key={index}
-                className="relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 aspect-square cursor-move bg-[#2C3E50]"
+                className="relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 aspect-square cursor-move"
                 onMouseMove={(e) => handleMouseMove(e, index)}
                 onMouseLeave={handleMouseLeave}
               >
-                <div
-                  className="absolute inset-0 transition-transform duration-200 ease-out"
+                <div 
+                  className="absolute inset-0 transition-transform duration-100 ease-out"
                   style={{
-                    transform:
-                      hoveredIndex === index
-                        ? `scale(1.4) translate(calc(${
-                            50 - mousePosition.x
-                          }% * -0.4), calc(${50 - mousePosition.y}% * -0.8))`
-                        : 'scale(1) translate(0, 0)',
+                    transform: hoveredIndex === index 
+                      ? `scale(2) translate(${50 - mousePosition.x}%, ${50 - mousePosition.y}%)`
+                      : 'scale(1) translate(0, 0)',
                   }}
                 >
                   <img

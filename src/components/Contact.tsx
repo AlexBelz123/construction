@@ -5,9 +5,11 @@ import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent } from '@/components/ui/card';
 import { Phone, Mail, MapPin, Send } from 'lucide-react';
 import { useToast } from '@/components/ui/use-toast';
+import { useTranslation } from 'react-i18next';
 
 export default function Contact() {
   const { toast } = useToast();
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -22,8 +24,8 @@ export default function Contact() {
     // Simulate form submission
     setTimeout(() => {
       toast({
-        title: 'Message Sent!',
-        description: "Thank you for contacting us. We'll get back to you soon.",
+        title: t('contact.form.success'),
+        description: t('contact.form.success'),
       });
       setFormData({ name: '', email: '', message: '' });
       setIsSubmitting(false);
@@ -33,25 +35,25 @@ export default function Contact() {
   const contactInfo = [
     {
       icon: Phone,
-      title: 'Phone (Serhii)',
+      title: `${t('contact.info.phone')} (Serhii)`,
       value: '+48 (501) 538-694',
       link: 'tel:+48501538694',
     },
     {
       icon: Phone,
-      title: 'Phone (Vadim)',
+      title: `${t('contact.info.phone')} (Vadim)`,
       value: '+48 (888) 197-962',
       link: 'tel:+48888197962',
     },
     {
       icon: Mail,
-      title: 'Email',
+      title: t('contact.info.email'),
       value: 'sh.remontpro@gmail.com',
       link: 'mailto:sh.remontpro@gmail.com',
     },
     {
       icon: MapPin,
-      title: 'Location',
+      title: t('contact.info.address'),
       value: 'Katowice, Poland',
       link: 'https://maps.app.goo.gl/uwuwgJEn7Z971tVb7',
     },
@@ -61,20 +63,19 @@ export default function Contact() {
     <section id="contact" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl md:text-5xl font-bold text-[#2C3E50] text-center mb-6">
-          Get In Touch
+          {t('contact.title')}
         </h2>
         <div className="w-24 h-1 bg-[#F39C12] mx-auto mb-12" />
 
         <p className="text-lg text-gray-600 text-center max-w-2xl mx-auto mb-16">
-          Ready to start your project? Contact us today for a free consultation
-          and quote
+          {t('contact.subtitle')}
         </p>
 
         <div className="grid grid-cols-1 lg:grid-cols-1 gap-12 max-w-6xl mx-auto">
           {/* Contact Information */}
           <div className="space-y-6">
             <h3 className="text-2xl font-bold text-[#2C3E50] mb-6">
-              Contact Information
+              {t('contact.info.title')}
             </h3>
 
             {contactInfo.map((info, index) => {

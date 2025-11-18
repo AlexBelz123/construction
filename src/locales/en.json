@@ -1,0 +1,114 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Building Excellence, Delivering Quality",
+    "subtitle": "Professional construction services for residential, commercial, and industrial projects",
+    "cta": "Get Started"
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "We offer comprehensive construction solutions tailored to your needs",
+    "design": {
+      "title": "Design & Planning",
+      "description": "Expert architectural design and project planning services"
+    },
+    "construction": {
+      "title": "Construction",
+      "description": "Quality construction services for all project types"
+    },
+    "renovation": {
+      "title": "Renovation",
+      "description": "Transform existing spaces with our renovation expertise"
+    },
+    "consultation": {
+      "title": "Consultation",
+      "description": "Professional advice and guidance for your projects"
+    }
+  },
+  "portfolio": {
+    "title": "Our Portfolio",
+    "subtitle": "Take a look at some of our recently completed projects showcasing our commitment to quality and excellence",
+    "viewGallery": "View Gallery",
+    "residential": {
+      "title": "Residential",
+      "description": "Custom homes, renovations, and remodeling projects"
+    },
+    "commercial": {
+      "title": "Commercial",
+      "description": "Office spaces, retail stores, and business facilities"
+    },
+    "industrial": {
+      "title": "Industrial",
+      "description": "Warehouses, factories, and industrial complexes"
+    },
+    "renovation": {
+      "title": "Renovation",
+      "description": "Complete makeovers and restoration projects"
+    },
+    "landscaping": {
+      "title": "Landscaping",
+      "description": "Outdoor spaces, gardens, and hardscaping"
+    },
+    "infrastructure": {
+      "title": "Infrastructure",
+      "description": "Roads, bridges, and public works projects"
+    }
+  },
+  "gallery": {
+    "backToPortfolio": "Back to Portfolio",
+    "notFound": "Gallery Not Found",
+    "returnHome": "Return to Home",
+    "residential": {
+      "title": "Residential Projects",
+      "description": "Custom homes, renovations, and remodeling projects that transform living spaces"
+    },
+    "commercial": {
+      "title": "Commercial Projects",
+      "description": "Office spaces, retail stores, and business facilities built for success"
+    },
+    "industrial": {
+      "title": "Industrial Projects",
+      "description": "Warehouses, factories, and industrial complexes engineered for efficiency"
+    },
+    "renovation": {
+      "title": "Renovation Projects",
+      "description": "Complete makeovers and restoration projects breathing new life into spaces"
+    },
+    "landscaping": {
+      "title": "Landscaping Projects",
+      "description": "Outdoor spaces, gardens, and hardscaping that enhance property value"
+    },
+    "infrastructure": {
+      "title": "Infrastructure Projects",
+      "description": "Roads, bridges, and public works projects building community foundations"
+    }
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "subtitle": "Have a project in mind? We'd love to hear from you",
+    "info": {
+      "title": "Contact Information",
+      "phone": "Phone",
+      "email": "Email",
+      "address": "Address"
+    },
+    "form": {
+      "name": "Your Name",
+      "email": "Your Email",
+      "message": "Your Message",
+      "submit": "Send Message",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "Failed to send message. Please try again."
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "tagline": "Building Excellence, Delivering Quality"
+  }
+}

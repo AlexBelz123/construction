@@ -1,0 +1,114 @@
+{
+  "nav": {
+    "home": "Strona główna",
+    "services": "Usługi",
+    "portfolio": "Portfolio",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "title": "Budujemy Doskonałość, Dostarczamy Jakość",
+    "subtitle": "Profesjonalne usługi budowlane dla projektów mieszkaniowych, komercyjnych i przemysłowych",
+    "cta": "Rozpocznij"
+  },
+  "services": {
+    "title": "Nasze Usługi",
+    "subtitle": "Oferujemy kompleksowe rozwiązania budowlane dostosowane do Twoich potrzeb",
+    "design": {
+      "title": "Projektowanie i Planowanie",
+      "description": "Eksperckie usługi projektowania architektonicznego i planowania projektów"
+    },
+    "construction": {
+      "title": "Budownictwo",
+      "description": "Wysokiej jakości usługi budowlane dla wszystkich typów projektów"
+    },
+    "renovation": {
+      "title": "Renowacja",
+      "description": "Przekształć istniejące przestrzenie dzięki naszej ekspertyzie w renowacji"
+    },
+    "consultation": {
+      "title": "Konsultacje",
+      "description": "Profesjonalne porady i wskazówki dla Twoich projektów"
+    }
+  },
+  "portfolio": {
+    "title": "Nasze Portfolio",
+    "subtitle": "Zapoznaj się z niektórymi z naszych niedawno ukończonych projektów, które pokazują nasze zaangażowanie w jakość i doskonałość",
+    "viewGallery": "Zobacz Galerię",
+    "residential": {
+      "title": "Mieszkaniowe",
+      "description": "Domy na zamówienie, renowacje i projekty przebudowy"
+    },
+    "commercial": {
+      "title": "Komercyjne",
+      "description": "Przestrzenie biurowe, sklepy detaliczne i obiekty biznesowe"
+    },
+    "industrial": {
+      "title": "Przemysłowe",
+      "description": "Magazyny, fabryki i kompleksy przemysłowe"
+    },
+    "renovation": {
+      "title": "Renowacja",
+      "description": "Kompletne przemiany i projekty restauracyjne"
+    },
+    "landscaping": {
+      "title": "Architektura Krajobrazu",
+      "description": "Przestrzenie zewnętrzne, ogrody i nawierzchnie"
+    },
+    "infrastructure": {
+      "title": "Infrastruktura",
+      "description": "Drogi, mosty i projekty robót publicznych"
+    }
+  },
+  "gallery": {
+    "backToPortfolio": "Powrót do Portfolio",
+    "notFound": "Galeria Nie Znaleziona",
+    "returnHome": "Powrót do Strony Głównej",
+    "residential": {
+      "title": "Projekty Mieszkaniowe",
+      "description": "Domy na zamówienie, renowacje i projekty przebudowy, które przekształcają przestrzenie mieszkalne"
+    },
+    "commercial": {
+      "title": "Projekty Komercyjne",
+      "description": "Przestrzenie biurowe, sklepy detaliczne i obiekty biznesowe zbudowane z myślą o sukcesie"
+    },
+    "industrial": {
+      "title": "Projekty Przemysłowe",
+      "description": "Magazyny, fabryki i kompleksy przemysłowe zaprojektowane z myślą o wydajności"
+    },
+    "renovation": {
+      "title": "Projekty Renowacyjne",
+      "description": "Kompletne przemiany i projekty restauracyjne tchnące nowe życie w przestrzenie"
+    },
+    "landscaping": {
+      "title": "Projekty Architektury Krajobrazu",
+      "description": "Przestrzenie zewnętrzne, ogrody i nawierzchnie zwiększające wartość nieruchomości"
+    },
+    "infrastructure": {
+      "title": "Projekty Infrastrukturalne",
+      "description": "Drogi, mosty i projekty robót publicznych budujące fundamenty społeczności"
+    }
+  },
+  "contact": {
+    "title": "Skontaktuj się z Nami",
+    "subtitle": "Masz projekt na myśli? Chętnie Cię wysłuchamy",
+    "info": {
+      "title": "Informacje Kontaktowe",
+      "phone": "Telefon",
+      "email": "E-mail",
+      "address": "Adres"
+    },
+    "form": {
+      "name": "Twoje Imię",
+      "email": "Twój E-mail",
+      "message": "Twoja Wiadomość",
+      "submit": "Wyślij Wiadomość",
+      "sending": "Wysyłanie...",
+      "success": "Wiadomość wysłana pomyślnie!",
+      "error": "Nie udało się wysłać wiadomości. Spróbuj ponownie."
+    }
+  },
+  "footer": {
+    "rights": "Wszelkie prawa zastrzeżone.",
+    "tagline": "Budujemy Doskonałość, Dostarczamy Jakość"
+  }
+}

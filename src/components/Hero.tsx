@@ -1,7 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export default function Hero() {
+  const { t } = useTranslation();
+  
   const scrollToContact = () => {
     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -23,18 +26,17 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center text-white">
         <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-in fade-in slide-in-from-bottom-4 duration-1000">
-          Building Your Dreams
-          <span className="block text-[#F39C12] mt-2">One Project at a Time</span>
+          {t('hero.title')}
         </h1>
         <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto text-gray-200 animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-200">
-          Professional construction services with over 15 years of experience in residential and commercial projects
+          {t('hero.subtitle')}
         </p>
         <Button 
           size="lg"
           onClick={scrollToContact}
           className="bg-[#F39C12] hover:bg-[#E67E22] text-white font-semibold px-8 py-6 text-lg rounded-lg shadow-2xl transition-all duration-300 hover:scale-105 animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-300"
         >
-          Get a Free Quote
+          {t('hero.cta')}
           <ArrowRight className="ml-2 h-5 w-5" />
         </Button>
       </div>
