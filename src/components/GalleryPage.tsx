@@ -1,6 +1,6 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import Navigation from "./Navigation";
 import Footer from "./Footer";
@@ -8,8 +8,14 @@ import Footer from "./Footer";
 export default function GalleryPage() {
   const { assetType } = useParams<{ assetType: string }>();
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const galleryData: Record<string, { title: string; description: string; images: string[] }> = {
     residential: {
@@ -58,6 +64,16 @@ export default function GalleryPage() {
     setHoveredIndex(null);
   };
 
+  const handleBackToPortfolio = () => {
+    navigate('/');
+    setTimeout(() => {
+      const portfolioSection = document.getElementById('portfolio');
+      if (portfolioSection) {
+        portfolioSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
+  };
+
   if (!currentGallery) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
@@ -77,13 +93,13 @@ export default function GalleryPage() {
       
       <div className="pt-24 pb-20">
         <div className="container mx-auto px-4">
-          <Link
-            to="/#portfolio"
+          <button
+            onClick={handleBackToPortfolio}
             className="inline-flex items-center gap-2 text-[#3498DB] hover:text-[#F39C12] transition-colors mb-8 font-semibold"
           >
             <ArrowLeft size={20} />
             {t('gallery.backToPortfolio')}
-          </Link>
+          </button>
 
           <h1 className="text-4xl md:text-5xl font-bold text-[#2C3E50] mb-4">
             {currentGallery.title}
