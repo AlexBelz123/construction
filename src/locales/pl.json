@@ -22,22 +22,30 @@
   },
   "services": {
     "title": "Nasze Usługi",
-    "subtitle": "Oferujemy kompleksowe rozwiązania budowlane dostosowane do Twoich potrzeb",
-    "design": {
-      "title": "Projektowanie i Planowanie",
-      "description": "Eksperckie usługi projektowania architektonicznego i planowania projektów"
+    "subtitle": "Oferujemy kompleksowy zakres usług budowlanych, aby spełnić wszystkie Twoje potrzeby mieszkaniowe i komercyjne",
+    "drywall": {
+      "title": "Montaż Płyt G-K",
+      "description": "Profesjonalny montaż płyt gipsowo-kartonowych z precyzją i wysokiej jakości wykończeniem"
     },
-    "construction": {
-      "title": "Budownictwo",
-      "description": "Wysokiej jakości usługi budowlane dla wszystkich typów projektów"
+    "painting": {
+      "title": "Szpachlowanie i Malowanie",
+      "description": "Eksperckie usługi szpachlowania i malowania dla gładkich, bezbłędnych ścian i sufitów"
     },
-    "renovation": {
-      "title": "Renowacja",
-      "description": "Przekształć istniejące przestrzenie dzięki naszej ekspertyzie w renowacji"
+    "tiling": {
+      "title": "Układanie Płytek",
+      "description": "Profesjonalne układanie płytek w łazienkach, kuchniach i wszystkich przestrzeniach wewnętrznych"
     },
-    "consultation": {
-      "title": "Konsultacje",
-      "description": "Profesjonalne porady i wskazówki dla Twoich projektów"
+    "laminate": {
+      "title": "Układanie Paneli Laminowanych",
+      "description": "Wysokiej jakości montaż paneli laminowanych dla trwałych i pięknych podłóg"
+    },
+    "windows": {
+      "title": "Wymiana Drzwi i Okien",
+      "description": "Ekspercka wymiana i montaż drzwi oraz okien dla lepszej efektywności"
+    },
+    "turnkey": {
+      "title": "Wykończenia Pomieszczeń Pod Klucz",
+      "description": "Kompleksowe usługi wykończenia pomieszczeń od początku do końca, gotowe do zamieszkania"
     }
   },
   "portfolio": {
@@ -107,6 +115,12 @@
       "email": "E-mail",
       "address": "Adres"
     },
+    "businessHours": {
+      "title": "Godziny Pracy",
+      "weekdays": "Poniedziałek - Piątek: 8:00 - 18:00",
+      "saturday": "Sobota: 9:00 - 16:00",
+      "sunday": "Niedziela: Zamknięte"
+    },
     "form": {
       "name": "Twoje Imię",
       "email": "Twój E-mail",
@@ -119,6 +133,8 @@
   },
   "footer": {
     "rights": "Wszelkie prawa zastrzeżone.",
-    "tagline": "Budujemy Doskonałość, Dostarczamy Jakość"
+    "tagline": "Budujemy Doskonałość, Dostarczamy Jakość",
+    "quickLinks": "Szybkie Linki",
+    "followUs": "Śledź Nas"
   }
 }

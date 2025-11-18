@@ -108,12 +108,12 @@ export default function Contact() {
             })}
 
             <div className="mt-8 p-6 bg-gradient-to-br from-[#2C3E50] to-[#3498DB] rounded-lg text-white">
-              <h4 className="text-xl font-bold mb-2">Business Hours</h4>
+              <h4 className="text-xl font-bold mb-2">{t('contact.businessHours.title')}</h4>
               <p className="text-gray-200">
-                Monday - Friday: 8:00 AM - 6:00 PM
+                {t('contact.businessHours.weekdays')}
               </p>
-              <p className="text-gray-200">Saturday: 9:00 AM - 4:00 PM</p>
-              <p className="text-gray-200">Sunday: Closed</p>
+              <p className="text-gray-200">{t('contact.businessHours.saturday')}</p>
+              <p className="text-gray-200">{t('contact.businessHours.sunday')}</p>
             </div>
           </div>
         </div>

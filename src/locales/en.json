@@ -22,22 +22,30 @@
   },
   "services": {
     "title": "Our Services",
-    "subtitle": "We offer comprehensive construction solutions tailored to your needs",
-    "design": {
-      "title": "Design & Planning",
-      "description": "Expert architectural design and project planning services"
+    "subtitle": "We offer a comprehensive range of construction services to meet all your residential and commercial needs",
+    "drywall": {
+      "title": "Drywall Installation",
+      "description": "Professional installation of drywall panels with precision and quality finishing"
     },
-    "construction": {
-      "title": "Construction",
-      "description": "Quality construction services for all project types"
+    "painting": {
+      "title": "Plastering & Painting",
+      "description": "Expert plastering and painting services for smooth, flawless walls and ceilings"
     },
-    "renovation": {
-      "title": "Renovation",
-      "description": "Transform existing spaces with our renovation expertise"
+    "tiling": {
+      "title": "Tile Installation",
+      "description": "Professional tile laying for bathrooms, kitchens, and all interior spaces"
     },
-    "consultation": {
-      "title": "Consultation",
-      "description": "Professional advice and guidance for your projects"
+    "laminate": {
+      "title": "Laminate Flooring",
+      "description": "Quality laminate panel installation for durable and beautiful floors"
+    },
+    "windows": {
+      "title": "Doors & Windows Replacement",
+      "description": "Expert replacement and installation of doors and windows for improved efficiency"
+    },
+    "turnkey": {
+      "title": "Turnkey Room Finishing",
+      "description": "Complete room finishing services from start to finish, ready to move in"
     }
   },
   "portfolio": {
@@ -107,6 +115,12 @@
       "email": "Email",
       "address": "Address"
     },
+    "businessHours": {
+      "title": "Business Hours",
+      "weekdays": "Monday - Friday: 8:00 AM - 6:00 PM",
+      "saturday": "Saturday: 9:00 AM - 4:00 PM",
+      "sunday": "Sunday: Closed"
+    },
     "form": {
       "name": "Your Name",
       "email": "Your Email",
@@ -119,6 +133,8 @@
   },
   "footer": {
     "rights": "All rights reserved.",
-    "tagline": "Building Excellence, Delivering Quality"
+    "tagline": "Building Excellence, Delivering Quality",
+    "quickLinks": "Quick Links",
+    "followUs": "Follow Us"
   }
 }

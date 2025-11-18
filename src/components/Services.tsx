@@ -2,51 +2,46 @@ import { Card, CardContent } from '@/components/ui/card';
 import {
   Hammer,
   PaintBucket,
+  Grid3x3,
+  Layers,
+  DoorOpen,
   Home,
-  Wrench,
-  Building2,
-  Ruler,
 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 export default function Services() {
   const { t } = useTranslation();
+
   const services = [
     {
       icon: Hammer,
-      title: 'Wall Repair & Installation',
-      description:
-        'Expert drywall installation, repair, and finishing for flawless walls in your home or business.',
+      titleKey: 'services.drywall.title',
+      descriptionKey: 'services.drywall.description',
     },
     {
       icon: PaintBucket,
-      title: 'Professional Painting',
-      description:
-        'Interior and exterior painting services with premium materials and meticulous attention to detail.',
+      titleKey: 'services.painting.title',
+      descriptionKey: 'services.painting.description',
+    },
+    {
+      icon: Grid3x3,
+      titleKey: 'services.tiling.title',
+      descriptionKey: 'services.tiling.description',
+    },
+    {
+      icon: Layers,
+      titleKey: 'services.laminate.title',
+      descriptionKey: 'services.laminate.description',
+    },
+    {
+      icon: DoorOpen,
+      titleKey: 'services.windows.title',
+      descriptionKey: 'services.windows.description',
     },
     {
       icon: Home,
-      title: 'Complete Renovations',
-      description:
-        'Full-scale home and commercial renovations that transform spaces into your dream environment.',
-    },
-    {
-      icon: Wrench,
-      title: 'Flooring Installation',
-      description:
-        'Hardwood, tile, laminate, and vinyl flooring installation with precision and care.',
-    },
-    {
-      icon: Building2,
-      title: 'Commercial Construction',
-      description:
-        'Reliable commercial construction services for offices, retail spaces, and industrial facilities.',
-    },
-    {
-      icon: Ruler,
-      title: 'Custom Carpentry',
-      description:
-        'Bespoke carpentry work including cabinets, trim, and custom woodwork tailored to your needs.',
+      titleKey: 'services.turnkey.title',
+      descriptionKey: 'services.turnkey.description',
     },
   ];
 
@@ -75,10 +70,10 @@ export default function Services() {
                     <Icon className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-[#2C3E50] mb-4 group-hover:text-[#3498DB] transition-colors">
-                    {service.title}
+                    {t(service.titleKey)}
                   </h3>
                   <p className="text-gray-600 leading-relaxed">
-                    {service.description}
+                    {t(service.descriptionKey)}
                   </p>
                 </CardContent>
               </Card>
