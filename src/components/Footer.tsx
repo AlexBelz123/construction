@@ -6,10 +6,11 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: Facebook, href: '#', label: 'Facebook' },
-    { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Instagram, href: '#', label: 'Instagram' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
+    {
+      icon: Instagram,
+      href: 'https://www.instagram.com/sh.remontpro?igsh=aThmZTJsOG13emo%3D&utm_source=qr',
+      label: 'Instagram',
+    },
   ];
 
   return (
@@ -34,7 +35,9 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">{t('footer.quickLinks')}</h4>
+            <h4 className="text-lg font-semibold mb-4">
+              {t('footer.quickLinks')}
+            </h4>
             <ul className="space-y-2">
               {[
                 { name: t('nav.home'), href: 'home' },
@@ -56,7 +59,9 @@ export default function Footer() {
 
           {/* Social Media */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">{t('footer.followUs')}</h4>
+            <h4 className="text-lg font-semibold mb-4">
+              {t('footer.followUs')}
+            </h4>
             <div className="flex space-x-4">
               {socialLinks.map((social) => {
                 const Icon = social.icon;
@@ -64,6 +69,8 @@ export default function Footer() {
                   <a
                     key={social.label}
                     href={social.href}
+                    target="_blank"
+                    referrerPolicy="no-referrer"
                     aria-label={social.label}
                     className="w-10 h-10 bg-[#3498DB] hover:bg-[#F39C12] rounded-full flex items-center justify-center transition-colors"
                   >

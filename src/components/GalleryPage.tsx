@@ -1,9 +1,9 @@
-import { useParams, Link, useNavigate } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
-import { useState, useEffect } from "react";
-import { useTranslation } from "react-i18next";
-import Navigation from "./Navigation";
-import Footer from "./Footer";
+import { useParams, Link, useNavigate } from 'react-router-dom';
+import { ArrowLeft } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+import Navigation from './Navigation';
+import Footer from './Footer';
 
 export default function GalleryPage() {
   const { assetType } = useParams<{ assetType: string }>();
@@ -17,42 +17,33 @@ export default function GalleryPage() {
     window.scrollTo(0, 0);
   }, []);
 
-  const galleryData: Record<string, { title: string; description: string; images: string[] }> = {
+  const galleryData: Record<
+    string,
+    { title: string; description: string; images: string[] }
+  > = {
     residential: {
       title: t('gallery.residential.title'),
       description: t('gallery.residential.description'),
-      images: Array(12).fill("/placeholder-image.jpg"),
+      images: Array.from({ length: 8 }, (_, i) => `/residential/${i + 1}.jpeg`),
     },
     commercial: {
       title: t('gallery.commercial.title'),
       description: t('gallery.commercial.description'),
-      images: Array(12).fill("/placeholder-image.jpg"),
+      images: Array.from({ length: 6 }, (_, i) => `/commercial/${i + 1}.jpeg`),
     },
     industrial: {
       title: t('gallery.industrial.title'),
       description: t('gallery.industrial.description'),
-      images: Array(12).fill("/placeholder-image.jpg"),
-    },
-    renovation: {
-      title: t('gallery.renovation.title'),
-      description: t('gallery.renovation.description'),
-      images: Array(12).fill("/placeholder-image.jpg"),
-    },
-    landscaping: {
-      title: t('gallery.landscaping.title'),
-      description: t('gallery.landscaping.description'),
-      images: Array(12).fill("/placeholder-image.jpg"),
-    },
-    infrastructure: {
-      title: t('gallery.infrastructure.title'),
-      description: t('gallery.infrastructure.description'),
-      images: Array(12).fill("/placeholder-image.jpg"),
+      images: Array.from({ length: 4 }, (_, i) => `/industrial/${i + 1}.jpeg`),
     },
   };
 
   const currentGallery = assetType ? galleryData[assetType] : null;
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>, index: number) => {
+  const handleMouseMove = (
+    e: React.MouseEvent<HTMLDivElement>,
+    index: number
+  ) => {
     const rect = e.currentTarget.getBoundingClientRect();
     const x = ((e.clientX - rect.left) / rect.width) * 100;
     const y = ((e.clientY - rect.top) / rect.height) * 100;
@@ -78,8 +69,13 @@ export default function GalleryPage() {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-4xl font-bold text-[#2C3E50] mb-4">{t('gallery.notFound')}</h1>
-          <Link to="/" className="text-[#3498DB] hover:text-[#F39C12] transition-colors">
+          <h1 className="text-4xl font-bold text-[#2C3E50] mb-4">
+            {t('gallery.notFound')}
+          </h1>
+          <Link
+            to="/"
+            className="text-[#3498DB] hover:text-[#F39C12] transition-colors"
+          >
             {t('gallery.returnHome')}
           </Link>
         </div>
@@ -88,9 +84,9 @@ export default function GalleryPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 flex flex-col">
       <Navigation />
-      
+
       <div className="pt-24 pb-20">
         <div className="container mx-auto px-4">
           <button
@@ -117,12 +113,15 @@ export default function GalleryPage() {
                 onMouseMove={(e) => handleMouseMove(e, index)}
                 onMouseLeave={handleMouseLeave}
               >
-                <div 
+                <div
                   className="absolute inset-0 transition-transform duration-100 ease-out"
                   style={{
-                    transform: hoveredIndex === index 
-                      ? `scale(2) translate(${50 - mousePosition.x}%, ${50 - mousePosition.y}%)`
-                      : 'scale(1) translate(0, 0)',
+                    transform:
+                      hoveredIndex === index
+                        ? `scale(2) translate(${50 - mousePosition.x}%, ${
+                            50 - mousePosition.y
+                          }%)`
+                        : 'scale(1) translate(0, 0)',
                   }}
                 >
                   <img
@@ -136,6 +135,7 @@ export default function GalleryPage() {
           </div>
         </div>
       </div>
+      <div className="flex-1" />
 
       <Footer />
     </div>

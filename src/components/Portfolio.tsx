@@ -1,46 +1,31 @@
-import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
-import { useTranslation } from "react-i18next";
+import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 export default function Portfolio() {
   const { t } = useTranslation();
-  
+
   const portfolioCategories = [
     {
-      slug: "residential",
+      slug: 'residential',
       title: t('portfolio.residential.title'),
       description: t('portfolio.residential.description'),
-      image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
+      image:
+        'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80',
     },
     {
-      slug: "commercial",
+      slug: 'commercial',
       title: t('portfolio.commercial.title'),
       description: t('portfolio.commercial.description'),
-      image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
+      image:
+        'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80',
     },
     {
-      slug: "industrial",
+      slug: 'industrial',
       title: t('portfolio.industrial.title'),
       description: t('portfolio.industrial.description'),
-      image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&q=80",
-    },
-    {
-      slug: "renovation",
-      title: t('portfolio.renovation.title'),
-      description: t('portfolio.renovation.description'),
-      image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80",
-    },
-    {
-      slug: "landscaping",
-      title: t('portfolio.landscaping.title'),
-      description: t('portfolio.landscaping.description'),
-      image: "https://images.unsplash.com/photo-1558904541-efa843a96f01?w=800&q=80",
-    },
-    {
-      slug: "infrastructure",
-      title: t('portfolio.infrastructure.title'),
-      description: t('portfolio.infrastructure.description'),
-      image: "https://images.unsplash.com/photo-1590856029826-c7a73142bbf1?w=800&q=80",
+      image:
+        'https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&q=80',
     },
   ];
 
@@ -51,7 +36,7 @@ export default function Portfolio() {
           {t('portfolio.title')}
         </h2>
         <div className="w-24 h-1 bg-[#F39C12] mx-auto mb-12" />
-        
+
         <p className="text-lg text-gray-600 text-center max-w-2xl mx-auto mb-16">
           {t('portfolio.subtitle')}
         </p>
