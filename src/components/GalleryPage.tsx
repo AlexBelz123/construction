@@ -24,17 +24,15 @@ export default function GalleryPage() {
     residential: {
       title: t('gallery.residential.title'),
       description: t('gallery.residential.description'),
-      images: Array.from({ length: 8 }, (_, i) => `/residential/${i + 1}.jpeg`),
+      images: Array.from(
+        { length: 17 },
+        (_, i) => `/residential/${i + 1}.jpeg`
+      ),
     },
     commercial: {
-      title: t('gallery.commercial.title'),
-      description: t('gallery.commercial.description'),
-      images: Array.from({ length: 6 }, (_, i) => `/commercial/${i + 1}.jpeg`),
-    },
-    industrial: {
-      title: t('gallery.industrial.title'),
-      description: t('gallery.industrial.description'),
-      images: Array.from({ length: 4 }, (_, i) => `/industrial/${i + 1}.jpeg`),
+      title: t('gallery.renovation.title'),
+      description: t('gallery.renovation.description'),
+      images: Array.from({ length: 11 }, (_, i) => `/renovation/${i + 1}.jpeg`),
     },
   };
 
@@ -109,7 +107,7 @@ export default function GalleryPage() {
             {currentGallery.images.map((image, index) => (
               <div
                 key={index}
-                className="relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 aspect-square cursor-move"
+                className="relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 aspect-square cursor-move bg-[#2C3E50]/95"
                 onMouseMove={(e) => handleMouseMove(e, index)}
                 onMouseLeave={handleMouseLeave}
               >
