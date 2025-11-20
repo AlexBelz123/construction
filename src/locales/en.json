@@ -7,7 +7,7 @@
   },
   "hero": {
     "title": "Building Excellence, Delivering Quality",
-    "subtitle": "Professional construction services for residential, commercial, and industrial projects",
+    "subtitle": "We create comfort. We deliver quality professional interior finishing services for apartments, houses, and commercial properties",
     "cta": "Get Started"
   },
   "aboutUs": {
@@ -54,27 +54,15 @@
     "viewGallery": "View Gallery",
     "residential": {
       "title": "Residential",
-      "description": "Custom homes, renovations, and remodeling projects"
+      "description": "Renovation of apartments and houses"
     },
     "commercial": {
       "title": "Commercial",
       "description": "Office spaces, retail stores, and business facilities"
     },
-    "industrial": {
-      "title": "Industrial",
-      "description": "Warehouses, factories, and industrial complexes"
-    },
     "renovation": {
       "title": "Renovation",
-      "description": "Complete makeovers and restoration projects"
-    },
-    "landscaping": {
-      "title": "Landscaping",
-      "description": "Outdoor spaces, gardens, and hardscaping"
-    },
-    "infrastructure": {
-      "title": "Infrastructure",
-      "description": "Roads, bridges, and public works projects"
+      "description": "Bathroom renovation"
     }
   },
   "gallery": {

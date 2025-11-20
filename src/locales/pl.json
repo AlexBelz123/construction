@@ -7,7 +7,7 @@
   },
   "hero": {
     "title": "Budujemy Doskonałość, Dostarczamy Jakość",
-    "subtitle": "Profesjonalne usługi budowlane dla projektów mieszkaniowych, komercyjnych i przemysłowych",
+    "subtitle": "Tworzymy Komfort, Dostarczamy Jakość Profesjonalne usługi wykończeniowe wnętrz dla mieszkań, domów i obiektów komercyjnych",
     "cta": "Rozpocznij"
   },
   "aboutUs": {
@@ -54,19 +54,12 @@
     "viewGallery": "Zobacz Galerię",
     "residential": {
       "title": "Mieszkaniowe",
-      "description": "Domy na zamówienie, renowacje i projekty przebudowy"
+      "description": "Remont mieszkań i domów"
     },
-    "commercial": {
-      "title": "Komercyjne",
-      "description": "Przestrzenie biurowe, sklepy detaliczne i obiekty biznesowe"
-    },
-    "industrial": {
-      "title": "Przemysłowe",
-      "description": "Magazyny, fabryki i kompleksy przemysłowe"
-    },
+
     "renovation": {
       "title": "Renowacja",
-      "description": "Kompletne przemiany i projekty restauracyjne"
+      "description": "Remont łazienek"
     },
     "landscaping": {
       "title": "Architektura Krajobrazu",

@@ -15,17 +15,10 @@ export default function Portfolio() {
     },
     {
       slug: 'commercial',
-      title: t('portfolio.commercial.title'),
-      description: t('portfolio.commercial.description'),
+      title: t('portfolio.renovation.title'),
+      description: t('portfolio.renovation.description'),
       image:
         'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80',
-    },
-    {
-      slug: 'industrial',
-      title: t('portfolio.industrial.title'),
-      description: t('portfolio.industrial.description'),
-      image:
-        'https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&q=80',
     },
   ];
 
