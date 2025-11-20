@@ -1,5 +1,5 @@
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import Navigation from './Navigation';
@@ -11,11 +11,31 @@ export default function GalleryPage() {
   const navigate = useNavigate();
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   // Scroll to top when component mounts
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  // Handle keyboard navigation in lightbox
+  useEffect(() => {
+    if (!lightboxOpen) return;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setLightboxOpen(false);
+      } else if (e.key === 'ArrowLeft') {
+        goToPrevious();
+      } else if (e.key === 'ArrowRight') {
+        goToNext();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [lightboxOpen, currentImageIndex]);
 
   const galleryData: Record<
     string,
@@ -63,6 +83,31 @@ export default function GalleryPage() {
     }, 100);
   };
 
+  const openLightbox = (index: number) => {
+    setCurrentImageIndex(index);
+    setLightboxOpen(true);
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeLightbox = () => {
+    setLightboxOpen(false);
+    document.body.style.overflow = 'unset';
+  };
+
+  const goToNext = () => {
+    if (!currentGallery) return;
+    setCurrentImageIndex((prev) => 
+      prev === currentGallery.images.length - 1 ? 0 : prev + 1
+    );
+  };
+
+  const goToPrevious = () => {
+    if (!currentGallery) return;
+    setCurrentImageIndex((prev) => 
+      prev === 0 ? currentGallery.images.length - 1 : prev - 1
+    );
+  };
+
   if (!currentGallery) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
@@ -107,7 +152,8 @@ export default function GalleryPage() {
             {currentGallery.images.map((image, index) => (
               <div
                 key={index}
-                className="relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 aspect-square cursor-move bg-[#2C3E50]/95"
+                className="relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 aspect-square cursor-pointer bg-[#2C3E50]/95"
+                onClick={() => openLightbox(index)}
                 onMouseMove={(e) => handleMouseMove(e, index)}
                 onMouseLeave={handleMouseLeave}
               >
@@ -136,6 +182,53 @@ export default function GalleryPage() {
       <div className="flex-1" />
 
       <Footer />
+
+      {/* Lightbox */}
+      {lightboxOpen && currentGallery && (
+        <div className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center">
+          {/* Close Button */}
+          <button
+            onClick={closeLightbox}
+            className="absolute top-4 right-4 z-[110] w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors"
+            aria-label="Close lightbox"
+          >
+            <X className="w-6 h-6 text-white" />
+          </button>
+
+          {/* Previous Button */}
+          <button
+            onClick={goToPrevious}
+            className="absolute left-4 z-[110] w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors"
+            aria-label="Previous image"
+          >
+            <ChevronLeft className="w-6 h-6 text-white" />
+          </button>
+
+          {/* Next Button */}
+          <button
+            onClick={goToNext}
+            className="absolute right-4 z-[110] w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors"
+            aria-label="Next image"
+          >
+            <ChevronRight className="w-6 h-6 text-white" />
+          </button>
+
+          {/* Image Container */}
+          <div className="relative w-full h-full flex items-center justify-center p-4">
+            <img
+              src={currentGallery.images[currentImageIndex]}
+              alt={`${currentGallery.title} ${currentImageIndex + 1}`}
+              className="max-w-full max-h-full object-contain"
+              style={{ width: 'auto', height: 'auto' }}
+            />
+          </div>
+
+          {/* Image Counter */}
+          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white/10 px-4 py-2 rounded-full text-white text-sm">
+            {currentImageIndex + 1} / {currentGallery.images.length}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
