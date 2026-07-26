@@ -1,12 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { scrollToSection } from "@/lib/scroll";
 
 export default function Hero() {
   const { t } = useTranslation();
   
   const scrollToContact = () => {
-    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+    scrollToSection('contact');
   };
 
   return (

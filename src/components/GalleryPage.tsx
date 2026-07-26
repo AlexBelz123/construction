@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import Navigation from './Navigation';
 import Footer from './Footer';
+import { getSectionHash } from '@/lib/scroll';
 
 export default function GalleryPage() {
   const { assetType } = useParams<{ assetType: string }>();
@@ -13,11 +14,6 @@ export default function GalleryPage() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  // Scroll to top when component mounts
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   // Handle keyboard navigation in lightbox
   useEffect(() => {
@@ -74,13 +70,7 @@ export default function GalleryPage() {
   };
 
   const handleBackToPortfolio = () => {
-    navigate('/');
-    setTimeout(() => {
-      const portfolioSection = document.getElementById('portfolio');
-      if (portfolioSection) {
-        portfolioSection.scrollIntoView({ behavior: 'smooth' });
-      }
-    }, 100);
+    navigate({ pathname: '/', hash: getSectionHash('portfolio') });
   };
 
   const openLightbox = (index: number) => {

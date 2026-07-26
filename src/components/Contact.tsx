@@ -40,12 +40,6 @@ export default function Contact() {
       link: 'tel:+48501538694',
     },
     {
-      icon: Phone,
-      title: `${t('contact.info.phone')} (Vadim)`,
-      value: '+48 (888) 197-962',
-      link: 'tel:+48888197962',
-    },
-    {
       icon: Mail,
       title: t('contact.info.email'),
       value: 'sh.remontpro@gmail.com',

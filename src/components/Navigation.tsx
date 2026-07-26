@@ -1,7 +1,9 @@
 import { useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useTranslation } from 'react-i18next';
+import { getSectionHash, scrollToSection } from '@/lib/scroll';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -12,17 +14,23 @@ import {
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const { t, i18n } = useTranslation();
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const navItems = [
-    { name: t('nav.home'), href: '#home' },
-    { name: t('nav.services'), href: '#services' },
-    { name: t('nav.portfolio'), href: '#portfolio' },
-    { name: t('nav.contact'), href: '#contact' },
+    { name: t('nav.home'), sectionId: 'home' },
+    { name: t('nav.services'), sectionId: 'services' },
+    { name: t('nav.portfolio'), sectionId: 'portfolio' },
+    { name: t('nav.contact'), sectionId: 'contact' },
   ];
 
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    element?.scrollIntoView({ behavior: 'smooth' });
+  const handleNavItemClick = (sectionId: string) => {
+    if (location.pathname === '/') {
+      scrollToSection(sectionId);
+    } else {
+      navigate({ pathname: '/', hash: getSectionHash(sectionId) });
+    }
+
     setIsOpen(false);
   };
 
@@ -36,21 +44,21 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <a
-              href="/"
+            <Link
+              to="/"
               className="text-2xl font-bold text-white hover:text-[#F39C12] transition-colors flex items-center gap-1"
             >
               <img src="/logo-large.png" alt="logo" className="size-16" />
               SH.REMONTPRO
-            </a>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
               <button
-                key={item.name}
-                onClick={() => scrollToSection(item.href)}
+                key={item.sectionId}
+                onClick={() => handleNavItemClick(item.sectionId)}
                 className="text-white hover:text-[#F39C12] transition-colors font-medium"
               >
                 {item.name}
@@ -94,8 +102,8 @@ export default function Navigation() {
           <div className="md:hidden py-4 space-y-2 animate-in slide-in-from-top duration-300">
             {navItems.map((item) => (
               <button
-                key={item.name}
-                onClick={() => scrollToSection(item.href)}
+                key={item.sectionId}
+                onClick={() => handleNavItemClick(item.sectionId)}
                 className="block w-full text-left px-4 py-2 text-white hover:bg-[#F39C12]/20 rounded transition-colors"
               >
                 {item.name}

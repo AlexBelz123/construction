@@ -1,5 +1,7 @@
 import { Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
+import { getSectionHash } from '@/lib/scroll';
 
 export default function Footer() {
   const { t } = useTranslation();
@@ -20,13 +22,13 @@ export default function Footer() {
           {/* Company Info */}
           <div>
             <h3 className="font-bold mb-4 text-[#F39C12]">
-              <a
-                href="/"
+              <Link
+                to="/"
                 className="text-xl font-bold text-[#F39C12] hover:text-[#F39C12] transition-colors flex items-center gap-1"
               >
                 <img src="/logo-large.png" alt="logo" className="size-12" />
                 SH.REMONTPRO
-              </a>
+              </Link>
             </h3>
             <p className="text-gray-300 leading-relaxed">
               {t('footer.tagline')}
@@ -40,18 +42,18 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2">
               {[
-                { name: t('nav.home'), href: 'home' },
-                { name: t('nav.services'), href: 'services' },
-                { name: t('nav.portfolio'), href: 'portfolio' },
-                { name: t('nav.contact'), href: 'contact' },
+                { name: t('nav.home'), sectionId: 'home' },
+                { name: t('nav.services'), sectionId: 'services' },
+                { name: t('nav.portfolio'), sectionId: 'portfolio' },
+                { name: t('nav.contact'), sectionId: 'contact' },
               ].map((item) => (
-                <li key={item.href}>
-                  <a
-                    href={`#${item.href}`}
+                <li key={item.sectionId}>
+                  <Link
+                    to={{ pathname: '/', hash: getSectionHash(item.sectionId) }}
                     className="text-gray-300 hover:text-[#F39C12] transition-colors"
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
